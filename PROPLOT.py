@@ -55,6 +55,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.menu.addAction("Slide Up")
         self.menu.addAction("Slide Down")
         self.menu.addAction("Long Touch")
+        self.menu.addAction("Double Slide Left")
+        self.menu.addAction("Double Slide Right")
+        self.menu.addAction("Double Slide Up")
+        self.menu.addAction("Double Slide Down")
+        self.menu.addAction("Double Long Touch")
+
         self.recordmenu.setMenu(self.menu)
 
         #change the value of menu_label when you click on an action
@@ -83,7 +89,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.range = QtWidgets.QSlider(QtCore.Qt.Orientation.Horizontal)
         self.range.setMinimum(0)
         self.range.setMaximum(500)
-        self.range.setValue(30)
+        self.range.setValue(20)
         self.range.setTickInterval(1)
         self.range.valueChanged.connect(self.rangeChanged)
 
@@ -91,7 +97,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.treshold = QtWidgets.QSlider(QtCore.Qt.Orientation.Horizontal)
         self.treshold.setMinimum(0)
         self.treshold.setMaximum(500)
-        self.treshold.setValue(10)
+        self.treshold.setValue(8)
         self.treshold.setTickInterval(1)
         self.treshold.valueChanged.connect(self.tresholdChanged)
 
@@ -150,7 +156,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.timer.setInterval(10)
         self.timer.timeout.connect(self.update_plot_data)
         self.timer.start()
-        self.ser = serial.Serial('/dev/ttyUSB0', 250000, timeout=0.1)
+        self.ser = serial.Serial('/dev/cu.usbserial-0001', 250000, timeout=0.1)
         self.sync = False
         self.calibration = []
         #TO DEFINE
@@ -173,7 +179,7 @@ class MainWindow(QtWidgets.QMainWindow):
         
             self.menu_label.setText("Action : " + action.text())
             self.menu_label.adjustSize()
-            files = {"Slide Left": "slideleft.txt", "Slide Right": "slideright.txt", "Slide Up": "slideup.txt", "Slide Down": "slidedown.txt", "Long Touch": "longtouch.txt"}
+            files = {"Slide Left": "slideleft.txt", "Slide Right": "slideright.txt", "Slide Up": "slideup.txt", "Slide Down": "slidedown.txt", "Long Touch": "longtouch.txt","Double Slide Left": "doubleslideleft.txt", "Double Slide Right": "doubleslideright.txt", "Double Slide Up": "doubleslideup.txt", "Double Slide Down": "doubleslidedown.txt", "Double Long Touch": "doublelongtouch.txt"}
             self.file = files[action.text()]
             # if self.recordmenu.text() == "Slide Left":
             #     pass
@@ -339,7 +345,7 @@ class MainWindow(QtWidgets.QMainWindow):
         
     def write(self, temp):
         with open(str(self.file), "a") as f:
-            f.write(str(temp.reshape(1,-1)[0])+"\n")
+            f.write(str([int(x) for x in temp.reshape(1,-1)[0]])+"\n")
             print("str : " + str(temp))
 
 def GravityCenter(self, temp : np.ndarray):

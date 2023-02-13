@@ -37,23 +37,23 @@ class MyDataset(Dataset):
         framenb = 0 
         cols = 9
         rows = 9
-        labelchange = {"slideleft": 0, "slideright" : 1, "slideup" : 2, "slidedown" : 3, "longtouch" : 4}
+        labelchange = {"slideleft": 0, "slideright" : 1, "slideup" : 2, "slidedown" : 3, "longtouch" : 4, "doubleslideleft" : 5, "doubleslideright" : 6, "doubleslideup" : 7, "doubleslidedown" : 8, "doublelongtouch" : 9}
         for file in self.files:
             if file.endswith('.txt'):
             
                 with open(os.path.join(root_dir, file), 'r') as f:
                     for line in f:
-                        
+                            register = True
               
                         #if line != '\n' :
                             print("len sample : ",len(sample), "framenb : ", framenb)
-                            if line != ';' and line != ';\n':
+                            if line != ';' and line != ';\n' and line != '\n':
 
                                 lineprocessed = line.split(', ')
                                 lineprocessed[0] = lineprocessed[0].replace('[', '')
                                 lineprocessed[-1] = lineprocessed[-1].replace(']\n', '')
                                 #lineprocessed = [i.replace(' ', '') for i in lineprocessed]
-                               
+                                
                                 lineprocessed = [int(i) for i in lineprocessed]
                                 sample.append([lineprocessed[x:x+cols] for x in range(0, len(lineprocessed),rows)])
                                 
@@ -65,15 +65,18 @@ class MyDataset(Dataset):
                         #lineprocessed = [float(i) for i in lineprocessed]
                       
                             if line == ";\n"   :
+                                if framenb < 5 :
+                                    register = False 
                                 for i in range (20-framenb):
                                     sample.append([[0 for i in range(cols)] for j in range(rows)])
                                 framenb = 20
 
                             if framenb == 20 :
-                                self.samples.append(sample)
-                                
-                                self.labels.append(labelchange[str(file)[:-4]])
-                          
+                                if register == True : 
+                                    self.samples.append(sample)
+                                    
+                                    self.labels.append(labelchange[str(file)[:-4]])
+
                                 sample = []
                                 framenb = 0
 
@@ -190,14 +193,12 @@ def test(model, device, test_loader, criterion):
 
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    train_dataset = MyDataset("/home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/dataset/9x9",True)
-    test_dataset = MyDataset("/home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/dataset/9x9",False)
+    train_dataset = MyDataset("/Users/hugo/ArcticProject/MucaMoveCNN/dataset/9x9",True)
+    test_dataset = MyDataset("/Users/hugo/ArcticProject/MucaMoveCNN/dataset/9x9",False)
     train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True, num_workers=4, drop_last=True)
     test_loader = DataLoader(test_dataset, batch_size=4, shuffle=False, num_workers=4, drop_last=True)
-    # for i,v in enumerate(train_loader):
-    #    print("train : ", v)
-    # for i,v in enumerate(test_loader):
-    #     print("test: ", v[1])
+    #Count the number of sample for each class
+    print("train_dataset : ", train_dataset.labels.count(0), train_dataset.labels.count(1), train_dataset.labels.count(2), train_dataset.labels.count(3), train_dataset.labels.count(4), train_dataset.labels.count(5), train_dataset.labels.count(6), train_dataset.labels.count(7), train_dataset.labels.count(8), train_dataset.labels.count(9))
     model = Net().to(device)
     criterion = torch.nn.CrossEntropyLoss().to(device)
     optimizer = torch.optim.SGD(model.parameters(),lr=0.01)

@@ -30,7 +30,7 @@ class Net(nn.Module):
         )
         #self.conv2 = nn.Conv2d(10, 20, kernel_size=5)
         self.fc1 = nn.Linear(256, 5)
-        self.fc2 = nn.Linear(50, 5)
+        self.fc2 = nn.Linear(50, 10)
 
     def forward(self, x):
         x = self.conv1(x)
