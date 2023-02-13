@@ -18,7 +18,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 total = []
 model = Net().to(device)
 model.load_state_dict(torch.load('model_weighs.pth'))
-trad = {0: "Slide Left", 1: "Slide Right", 2: "Slide Up", 3: "Slide Down", 4: "Long Touch"}
+trad = {0: "Slide Left", 1: "Slide Right", 2: "Slide Up", 3: "Slide Down", 4: "Long Touch", 5: "Double Slide Left", 6: "Double Slide Right", 7: "Double Slide Up", 8: "Double Slide Down", 9: "Double Long Touch"}
 
 
 
@@ -156,7 +156,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.timer.setInterval(10)
         self.timer.timeout.connect(self.update_plot_data)
         self.timer.start()
-        self.ser = serial.Serial('/dev/cu.usbserial-0001', 250000, timeout=0.1)
+        self.ser = serial.Serial('/dev/ttyUSB0', 250000, timeout=0.1)
         self.sync = False
         self.calibration = []
         #TO DEFINE
@@ -294,22 +294,29 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
             tracking, moyenne = GravityCenter(self, temp)
-
-
-            if moyenne>0.2 and Listening == False: 
+            nbpaddingframes = 0
+            
+            if moyenne>0.2 and len(total) < 20 : #Listening == False: 
                 Listening = True
-                
-                
-
-            if  Listening == True and len(total)<20:
                 total.append(temp)
+                
+            
 
+            elif moyenne < 0.2 and len(total) < 20 and Listening == True:
+                nbpaddingframes = 20 - len(total)
+                for i in range(nbpaddingframes):
+                    total.append(np.zeros((self.rows, self.cols)))
+               
 
-            if Listening == True and len(total)==20 :    
-                inf = inferenceCNN(model, torch.Tensor(total))
-                print("inference : ", inf)
-                self.Move = trad[inf]
-                self.MoveChanged()
+            if len(total)==20 :   
+                if nbpaddingframes < 12 : 
+                    inf = inferenceCNN(model, torch.Tensor(total))
+                    print("inference : ", inf)
+                    self.Move = trad[inf]
+                    self.MoveChanged()
+   
+                else : 
+                    print("not used")
                 Listening = False 
                 total = []
 

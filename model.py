@@ -29,7 +29,7 @@ class Net(nn.Module):
             nn.MaxPool2d(kernel_size=2)
         )
         #self.conv2 = nn.Conv2d(10, 20, kernel_size=5)
-        self.fc1 = nn.Linear(256, 5)
+        self.fc1 = nn.Linear(256, 50)
         self.fc2 = nn.Linear(50, 10)
 
     def forward(self, x):
@@ -38,7 +38,7 @@ class Net(nn.Module):
         x = torch.flatten(x, 1)
   
         logits =self.fc1(x)
-    
+        logits = self.fc2(logits)
         #logits = self.fc2(x)
 
         return logits

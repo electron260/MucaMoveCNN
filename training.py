@@ -105,6 +105,7 @@ class MyDataset(Dataset):
         #print("sample : ",sample)
         #print(torch.Tensor(sample).size())
        
+        #print("tensor size : ", torch.Tensor(sample).size(), "    label : ", label)
 
         return torch.Tensor(sample), label
 
@@ -134,10 +135,9 @@ def train(model, device, train_loader, optimizer, epoch, criterion):
         
         logits = model(data)
         #logits = torch.softmax(logits, dim = 1) 
+        #print("logits : ", logits, "target : ", target)
         loss = criterion(logits, target)
-        #print("logits : ", logits, "target : ", target, "loss : ", loss)
-        # print("logits : ", logits, "data : ", data)
-
+      
         optimizer.zero_grad()
         #predictions = logits.argmax(dim=1)
         loss.backward()
@@ -193,8 +193,8 @@ def test(model, device, test_loader, criterion):
 
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    train_dataset = MyDataset("/Users/hugo/ArcticProject/MucaMoveCNN/dataset/9x9",True)
-    test_dataset = MyDataset("/Users/hugo/ArcticProject/MucaMoveCNN/dataset/9x9",False)
+    train_dataset = MyDataset("/home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/dataset/9x9",True)
+    test_dataset = MyDataset("/home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/dataset/9x9",False)
     train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True, num_workers=4, drop_last=True)
     test_loader = DataLoader(test_dataset, batch_size=4, shuffle=False, num_workers=4, drop_last=True)
     #Count the number of sample for each class
