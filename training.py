@@ -143,9 +143,11 @@ def train(model, device, train_loader, optimizer, epoch, criterion):
         loss.backward()
 
         optimizer.step()
+    
         pred = torch.softmax(logits,dim=1).argmax(dim=1, keepdim=True)
         correct += pred.eq(target.view_as(pred)).sum().item()
         # if batch_idx % 100 == 0:
+        
     
     accuracy = 100. * correct / len(train_loader.dataset)
     print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}\tAccuracy: {}/{} ({:.0f}%)'.format(
@@ -202,10 +204,14 @@ def main():
     model = Net().to(device)
     criterion = torch.nn.CrossEntropyLoss().to(device)
     optimizer = torch.optim.SGD(model.parameters(),lr=0.01)
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=50, gamma=0.1, last_epoch=-1)
+
     #use tqdm to display the progress bar
-    for epoch in (range(200)):
+    for epoch in (range(300)):
         train(model, device, train_loader, optimizer, epoch,criterion)
         test(model, device, test_loader, criterion)
+        scheduler.step()
+        print("lr : ", scheduler.get_lr())
 
 
 
