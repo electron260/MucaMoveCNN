@@ -203,12 +203,15 @@ class MainWindow(QtWidgets.QMainWindow):
                 
     def tempChanged(self):
         self.temp_label.setText("Temperature : " + str(self.temp))
+        print("changed")
 
     def pressionChanged(self):
         self.pression_label.setText("Pression : " + str(self.pression))
+        print("changed")
     
     def humiditeChanged(self):
         self.humidite_label.setText("Humidite : " + str(self.humidite))
+        print("changed")
     
     def rangeChanged(self):
         range = self.range.value()
@@ -305,7 +308,8 @@ class MainWindow(QtWidgets.QMainWindow):
             # self.readByte()
             self.readString()
             #  reashaep the data
-            self.buffer = self.buffer.reshape(self.rows, self.cols)
+       
+            self.buffer = self.buffer.reshape(11,11)
             self.tempChanged()
             self.pressionChanged()
             self.humiditeChanged()
@@ -358,9 +362,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
 
-            
+         
 
-            if moyenne > 0.2 and self.file != None: 
+            if moyenne > 1.2 and self.file != None: 
                    #change the color of the menu label when the action is detected
                 self.patience = 1
             else:
@@ -391,7 +395,7 @@ class MainWindow(QtWidgets.QMainWindow):
         
     def write(self, temp):
         with open(str(self.file), "a") as f:
-            f.write(str([int(x) for x in temp.reshape(1,-1)[0]])+",temperature : "+str(self.temp)+", humidity : "+ str(self.humidite)+", Pression : "+str(self.pression) +"\n")
+            f.write(str([x for x in temp.reshape(1,-1)[0]])+",temperature : "+str(self.temp)+", humidity : "+ str(self.humidite)+", Pression : "+str(self.pression) +"\n")
             print("str : " + str(temp))
 
 def GravityCenter(self, temp : np.ndarray):
