@@ -17,7 +17,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 total = []
 model = Net().to(device)
-model.load_state_dict(torch.load('CNN/model_weighs.pth'))
+model.load_state_dict(torch.load('model_weighs.pth'))
 
 trad = {0: "Slide Left", 1: "Slide Right", 2: "Slide Up", 3: "Slide Down", 4: "Long Touch", 5: "Double Slide Left", 6: "Double Slide Right", 7: "Double Slide Up", 8: "Double Slide Down", 9: "Double Long Touch"}
 
