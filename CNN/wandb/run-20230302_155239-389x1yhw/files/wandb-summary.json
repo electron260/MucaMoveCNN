@@ -1,0 +1,1 @@
+{"avg train acc:": 99.7270245677889, "epoch": 99, "_timestamp": 1677768917.710845, "_runtime": 158.58845496177673, "_step": 199, "avg test acc:": 52.91970802919708, "_wandb": {"runtime": 157}}

@@ -1,0 +1,145 @@
+2023-03-02 15:47:10,409 INFO    StreamThr :45206 [internal.py:wandb_internal():88] W&B internal server running at pid: 45206, started at: 2023-03-02 15:47:10.409115
+2023-03-02 15:47:10,411 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: status
+2023-03-02 15:47:10,411 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: status
+2023-03-02 15:47:10,413 DEBUG   SenderThread:45206 [sender.py:send():303] send: header
+2023-03-02 15:47:10,413 INFO    WriterThread:45206 [datastore.py:open_for_write():75] open: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/run-2xqm0lcl.wandb
+2023-03-02 15:47:10,423 DEBUG   SenderThread:45206 [sender.py:send():303] send: run
+2023-03-02 15:47:11,048 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: check_version
+2023-03-02 15:47:11,049 INFO    SenderThread:45206 [dir_watcher.py:__init__():216] watching files in: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files
+2023-03-02 15:47:11,049 INFO    SenderThread:45206 [sender.py:_start_run_threads():928] run started: 2xqm0lcl with start time 1677768430.407767
+2023-03-02 15:47:11,049 DEBUG   SenderThread:45206 [sender.py:send():303] send: summary
+2023-03-02 15:47:11,050 INFO    SenderThread:45206 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2023-03-02 15:47:11,050 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: check_version
+2023-03-02 15:47:11,245 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: run_start
+2023-03-02 15:47:11,253 DEBUG   HandlerThread:45206 [meta.py:__init__():34] meta init
+2023-03-02 15:47:11,254 DEBUG   HandlerThread:45206 [meta.py:__init__():49] meta init done
+2023-03-02 15:47:11,254 DEBUG   HandlerThread:45206 [meta.py:probe():215] probe
+2023-03-02 15:47:11,269 DEBUG   HandlerThread:45206 [meta.py:_setup_git():205] setup git
+2023-03-02 15:47:11,286 DEBUG   HandlerThread:45206 [meta.py:_setup_git():212] setup git done
+2023-03-02 15:47:11,286 DEBUG   HandlerThread:45206 [meta.py:_save_pip():53] save pip
+2023-03-02 15:47:11,287 DEBUG   HandlerThread:45206 [meta.py:_save_pip():67] save pip done
+2023-03-02 15:47:11,287 DEBUG   HandlerThread:45206 [meta.py:probe():253] probe done
+2023-03-02 15:47:11,292 DEBUG   SenderThread:45206 [sender.py:send():303] send: files
+2023-03-02 15:47:11,292 INFO    SenderThread:45206 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2023-03-02 15:47:11,308 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: stop_status
+2023-03-02 15:47:11,308 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: stop_status
+2023-03-02 15:47:11,715 DEBUG   SenderThread:45206 [sender.py:send():303] send: telemetry
+2023-03-02 15:47:11,716 DEBUG   SenderThread:45206 [sender.py:send():303] send: telemetry
+2023-03-02 15:47:11,716 DEBUG   SenderThread:45206 [sender.py:send():303] send: run
+2023-03-02 15:47:12,133 INFO    Thread-13 :45206 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/config.yaml
+2023-03-02 15:47:12,159 INFO    Thread-13 :45206 [dir_watcher.py:_on_file_created():275] file/dir created: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/wandb-metadata.json
+2023-03-02 15:47:12,171 INFO    Thread-13 :45206 [dir_watcher.py:_on_file_created():275] file/dir created: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/requirements.txt
+2023-03-02 15:47:12,173 INFO    Thread-13 :45206 [dir_watcher.py:_on_file_created():275] file/dir created: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/wandb-summary.json
+2023-03-02 15:47:12,261 INFO    Thread-17 :45206 [upload_job.py:push():143] Uploaded file /tmp/tmpf7o2ruu7wandb/30783w2t-wandb-metadata.json
+2023-03-02 15:47:12,471 INFO    SenderThread:45206 [sender.py:send_run():812] updated run: 2xqm0lcl
+2023-03-02 15:47:13,154 INFO    Thread-13 :45206 [dir_watcher.py:_on_file_created():275] file/dir created: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/output.log
+2023-03-02 15:47:14,768 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: poll_exit
+2023-03-02 15:47:14,832 DEBUG   SenderThread:45206 [sender.py:send():303] send: exit
+2023-03-02 15:47:14,837 INFO    SenderThread:45206 [sender.py:send_exit():442] handling exit code: 255
+2023-03-02 15:47:14,837 INFO    SenderThread:45206 [sender.py:send_exit():444] handling runtime: 3
+2023-03-02 15:47:14,839 INFO    SenderThread:45206 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2023-03-02 15:47:14,839 INFO    SenderThread:45206 [sender.py:send_exit():450] send defer
+2023-03-02 15:47:14,839 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: poll_exit
+2023-03-02 15:47:14,840 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:14,840 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 0
+2023-03-02 15:47:14,840 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:14,841 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 0
+2023-03-02 15:47:14,841 INFO    SenderThread:45206 [sender.py:transition_state():463] send defer: 1
+2023-03-02 15:47:14,841 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:14,841 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 1
+2023-03-02 15:47:14,893 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:14,894 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 1
+2023-03-02 15:47:14,894 INFO    SenderThread:45206 [sender.py:transition_state():463] send defer: 2
+2023-03-02 15:47:14,894 DEBUG   SenderThread:45206 [sender.py:send():303] send: stats
+2023-03-02 15:47:14,894 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:14,894 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 2
+2023-03-02 15:47:14,895 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:14,895 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 2
+2023-03-02 15:47:14,895 INFO    SenderThread:45206 [sender.py:transition_state():463] send defer: 3
+2023-03-02 15:47:14,895 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:14,895 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 3
+2023-03-02 15:47:14,895 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:14,895 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 3
+2023-03-02 15:47:14,895 INFO    SenderThread:45206 [sender.py:transition_state():463] send defer: 4
+2023-03-02 15:47:14,895 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:14,895 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 4
+2023-03-02 15:47:14,896 DEBUG   SenderThread:45206 [sender.py:send():303] send: summary
+2023-03-02 15:47:14,896 INFO    SenderThread:45206 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2023-03-02 15:47:14,896 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:14,896 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 4
+2023-03-02 15:47:14,896 INFO    SenderThread:45206 [sender.py:transition_state():463] send defer: 5
+2023-03-02 15:47:14,896 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:14,896 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 5
+2023-03-02 15:47:14,896 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:14,897 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 5
+2023-03-02 15:47:15,187 INFO    Thread-13 :45206 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/output.log
+2023-03-02 15:47:15,188 INFO    Thread-13 :45206 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/wandb-summary.json
+2023-03-02 15:47:15,326 INFO    SenderThread:45206 [sender.py:transition_state():463] send defer: 6
+2023-03-02 15:47:15,327 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:15,328 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 6
+2023-03-02 15:47:15,328 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:15,328 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 6
+2023-03-02 15:47:16,187 INFO    Thread-13 :45206 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/config.yaml
+2023-03-02 15:47:16,828 INFO    SenderThread:45206 [sender.py:transition_state():463] send defer: 7
+2023-03-02 15:47:16,829 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:16,829 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 7
+2023-03-02 15:47:16,830 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:16,830 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 7
+2023-03-02 15:47:16,830 INFO    SenderThread:45206 [dir_watcher.py:finish():362] shutting down directory watcher
+2023-03-02 15:47:17,189 INFO    SenderThread:45206 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/output.log
+2023-03-02 15:47:17,190 INFO    SenderThread:45206 [dir_watcher.py:finish():392] scan: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files
+2023-03-02 15:47:17,190 INFO    SenderThread:45206 [dir_watcher.py:finish():406] scan save: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/requirements.txt requirements.txt
+2023-03-02 15:47:17,191 INFO    SenderThread:45206 [dir_watcher.py:finish():406] scan save: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/wandb-summary.json wandb-summary.json
+2023-03-02 15:47:17,198 INFO    SenderThread:45206 [dir_watcher.py:finish():406] scan save: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/config.yaml config.yaml
+2023-03-02 15:47:17,200 INFO    SenderThread:45206 [dir_watcher.py:finish():406] scan save: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/output.log output.log
+2023-03-02 15:47:17,203 INFO    SenderThread:45206 [dir_watcher.py:finish():406] scan save: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/wandb-metadata.json wandb-metadata.json
+2023-03-02 15:47:17,203 INFO    SenderThread:45206 [sender.py:transition_state():463] send defer: 8
+2023-03-02 15:47:17,206 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:17,206 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 8
+2023-03-02 15:47:17,206 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:17,206 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 8
+2023-03-02 15:47:17,206 INFO    SenderThread:45206 [file_pusher.py:finish():168] shutting down file pusher
+2023-03-02 15:47:18,157 INFO    Thread-19 :45206 [upload_job.py:push():143] Uploaded file /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/wandb-summary.json
+2023-03-02 15:47:18,184 INFO    Thread-20 :45206 [upload_job.py:push():143] Uploaded file /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/config.yaml
+2023-03-02 15:47:18,316 INFO    Thread-21 :45206 [upload_job.py:push():143] Uploaded file /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/output.log
+2023-03-02 15:47:18,488 INFO    Thread-18 :45206 [upload_job.py:push():143] Uploaded file /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/files/requirements.txt
+2023-03-02 15:47:18,690 INFO    Thread-12 :45206 [sender.py:transition_state():463] send defer: 9
+2023-03-02 15:47:18,691 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:18,691 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 9
+2023-03-02 15:47:18,692 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:18,692 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 9
+2023-03-02 15:47:18,692 INFO    SenderThread:45206 [file_pusher.py:join():173] waiting for file pusher
+2023-03-02 15:47:18,692 INFO    SenderThread:45206 [sender.py:transition_state():463] send defer: 10
+2023-03-02 15:47:18,693 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:18,693 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 10
+2023-03-02 15:47:18,694 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:18,694 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 10
+2023-03-02 15:47:18,707 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: keepalive
+2023-03-02 15:47:19,221 INFO    SenderThread:45206 [sender.py:transition_state():463] send defer: 11
+2023-03-02 15:47:19,222 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:19,222 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 11
+2023-03-02 15:47:19,222 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:19,222 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 11
+2023-03-02 15:47:19,222 INFO    SenderThread:45206 [sender.py:transition_state():463] send defer: 12
+2023-03-02 15:47:19,222 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: defer
+2023-03-02 15:47:19,222 INFO    HandlerThread:45206 [handler.py:handle_request_defer():161] handle defer: 12
+2023-03-02 15:47:19,223 DEBUG   SenderThread:45206 [sender.py:send():303] send: final
+2023-03-02 15:47:19,223 DEBUG   SenderThread:45206 [sender.py:send():303] send: footer
+2023-03-02 15:47:19,223 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: defer
+2023-03-02 15:47:19,223 INFO    SenderThread:45206 [sender.py:send_request_defer():459] handle sender defer: 12
+2023-03-02 15:47:19,224 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: poll_exit
+2023-03-02 15:47:19,224 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: server_info
+2023-03-02 15:47:19,224 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: poll_exit
+2023-03-02 15:47:19,224 DEBUG   SenderThread:45206 [sender.py:send_request():317] send_request: server_info
+2023-03-02 15:47:19,226 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: get_summary
+2023-03-02 15:47:19,226 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: sampled_history
+2023-03-02 15:47:19,798 INFO    MainThread:45206 [wandb_run.py:_footer_history_summary_info():3377] rendering history
+2023-03-02 15:47:19,799 INFO    MainThread:45206 [wandb_run.py:_footer_history_summary_info():3409] rendering summary
+2023-03-02 15:47:19,799 INFO    MainThread:45206 [wandb_run.py:_footer_sync_info():3333] logging synced files
+2023-03-02 15:47:19,800 DEBUG   HandlerThread:45206 [handler.py:handle_request():138] handle_request: shutdown
+2023-03-02 15:47:19,801 INFO    HandlerThread:45206 [handler.py:finish():814] shutting down handler
+2023-03-02 15:47:20,223 INFO    WriterThread:45206 [datastore.py:close():279] close: /home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/wandb/run-20230302_154710-2xqm0lcl/run-2xqm0lcl.wandb
+2023-03-02 15:47:20,797 INFO    SenderThread:45206 [sender.py:finish():1331] shutting down sender
+2023-03-02 15:47:20,797 INFO    SenderThread:45206 [file_pusher.py:finish():168] shutting down file pusher
+2023-03-02 15:47:20,797 INFO    SenderThread:45206 [file_pusher.py:join():173] waiting for file pusher
+2023-03-02 15:47:20,803 INFO    MainThread:45206 [internal.py:handle_exit():78] Internal process exited
