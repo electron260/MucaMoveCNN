@@ -1,0 +1,24 @@
+{
+    "os": "Linux-5.19.0-32-generic-x86_64-with-glibc2.35",
+    "python": "3.9.10",
+    "heartbeatAt": "2023-03-02T14:49:19.815501",
+    "startedAt": "2023-03-02T14:49:18.910493",
+    "docker": null,
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN/CNN/training.py",
+    "codePath": "CNN/training.py",
+    "git": {
+        "remote": "https://github.com/electron260/MucaMoveCNN.git",
+        "commit": "88da73bbc16a92820cf6b53c0480597ddb284487"
+    },
+    "email": "hugo.daumain@edu.devinci.fr",
+    "root": "/home/hugo/Bureau/ARTICPROJECT/MucaMoveCNN",
+    "host": "hugo-ZenBook-Pro-15-UX550GDX-UX580GD",
+    "username": "hugo",
+    "executable": "/home/hugo/.pyenv/versions/3.9.10/bin/python"
+}

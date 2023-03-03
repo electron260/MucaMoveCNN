@@ -10,15 +10,17 @@ import sys
 from sklearn.cluster import KMeans
 from yellowbrick.cluster import KElbowVisualizer, SilhouetteVisualizer
 from sklearn.cluster import KMeans
-from model import Net 
+from CNN.model import Net 
 import torch 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 total = []
 model = Net().to(device)
-model.load_state_dict(torch.load('model_weighs.pth'))
+model.load_state_dict(torch.load('CNN/model_weighs.pth'))
+
 trad = {0: "Slide Left", 1: "Slide Right", 2: "Slide Up", 3: "Slide Down", 4: "Long Touch", 5: "Double Slide Left", 6: "Double Slide Right", 7: "Double Slide Up", 8: "Double Slide Down", 9: "Double Long Touch"}
+
 #assign a different color for each element of the dictionnary 
 colorMove={0 : "QLabel { background-color : green; color : white; }", 1:"QLabel { background-color : red; color : white; }", 2:"QLabel { background-color : blue; color : white; }", 3 : "QLabel { background-color : purple; color : white; }", 4 :"QLabel { background-color : yellow; color : white; }" , 5: "QLabel { background-color : brown; color : white; }", 6 : "QLabel { background-color : grey; color : white; }", 7 : "QLabel { background-color : orange; color : white; }", 8 : "QLabel { background-color : cyan; color : white; }", 9 : "QLabel { background-color : magenta; color : white; }"}
 
@@ -51,16 +53,18 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.recordmenu = QtWidgets.QPushButton("Action",self)
         self.menu = QtWidgets.QMenu(self)
-        self.menu.addAction("Slide Left")
-        self.menu.addAction("Slide Right")
-        self.menu.addAction("Slide Up")
-        self.menu.addAction("Slide Down")
-        self.menu.addAction("Long Touch")
-        self.menu.addAction("Double Slide Left")
-        self.menu.addAction("Double Slide Right")
-        self.menu.addAction("Double Slide Up")
-        self.menu.addAction("Double Slide Down")
-        self.menu.addAction("Double Long Touch")
+        for _,k in trad.items():
+            self.menu.addAction(k)
+        # self.menu.addAction("Slide Left")
+        # self.menu.addAction("Slide Right")
+        # self.menu.addAction("Slide Up")
+        # self.menu.addAction("Slide Down")
+        # self.menu.addAction("Long Touch")
+        # self.menu.addAction("Double Slide Left")
+        # self.menu.addAction("Double Slide Right")
+        # self.menu.addAction("Double Slide Up")
+        # self.menu.addAction("Double Slide Down")
+        # self.menu.addAction("Double Long Touch")
 
         self.recordmenu.setMenu(self.menu)
 
@@ -74,9 +78,9 @@ class MainWindow(QtWidgets.QMainWindow):
         
 
         self.Move = "No move"
-        self.temperature = 0
-        self.pression = 0
-        self.humidite = 0
+        # self.temperature = 0
+        # self.pression = 0
+        # self.humidite = 0
 
 
       
@@ -118,14 +122,14 @@ class MainWindow(QtWidgets.QMainWindow):
         self.range_label = QtWidgets.QLabel()
         self.range_label.setText("Range: " + str(self.treshold.value()))
 
-        self.temp_label = QtWidgets.QLabel()
-        self.temp_label.setText("Temperature : " + str(self.temperature))
+        # self.temp_label = QtWidgets.QLabel()
+        # self.temp_label.setText("Temperature : " + str(self.temperature))
 
-        self.pression_label = QtWidgets.QLabel()
-        self.pression_label.setText("Pression : " + str(self.pression))
+        # self.pression_label = QtWidgets.QLabel()
+        # self.pression_label.setText("Pression : " + str(self.pression))
 
-        self.humidite_label = QtWidgets.QLabel()
-        self.humidite_label.setText("Humidite : " + str(self.humidite))
+        # self.humidite_label = QtWidgets.QLabel()
+        # self.humidite_label.setText("Humidite : " + str(self.humidite))
 
         # self.trackingWidget.setBackground('w')
 
@@ -148,9 +152,9 @@ class MainWindow(QtWidgets.QMainWindow):
         layout.addWidget(self.recordmenu)
         layout.addWidget(self.menu_label)
         layout.addWidget(self.infoMove)
-        layout.addWidget(self.temp_label)
-        layout.addWidget(self.pression_label)
-        layout.addWidget(self.humidite_label)
+        # layout.addWidget(self.temp_label)
+        # layout.addWidget(self.pression_label)
+        # layout.addWidget(self.humidite_label)
 
      
 
@@ -196,22 +200,23 @@ class MainWindow(QtWidgets.QMainWindow):
         
             self.menu_label.setText("Action : " + action.text())
             self.menu_label.adjustSize()
-            files = {"Slide Left": "slideleft.txt", "Slide Right": "slideright.txt", "Slide Up": "slideup.txt", "Slide Down": "slidedown.txt", "Long Touch": "longtouch.txt","Double Slide Left": "doubleslideleft.txt", "Double Slide Right": "doubleslideright.txt", "Double Slide Up": "doubleslideup.txt", "Double Slide Down": "doubleslidedown.txt", "Double Long Touch": "doublelongtouch.txt"}
+            #create a dict taking the values of the trad dict and the keys are the values without space and with .txt
+            files = {v.replace(" ","").replace(".txt",""):v for v in self.trad.values()}
             self.file = files[action.text()]
             # if self.recordmenu.text() == "Slide Left":
             #     pass
                 
-    def tempChanged(self):
-        self.temp_label.setText("Temperature : " + str(self.temp))
-        print("changed")
+    # def tempChanged(self):
+    #     self.temp_label.setText("Temperature : " + str(self.temp))
+    #     print("changed")
 
-    def pressionChanged(self):
-        self.pression_label.setText("Pression : " + str(self.pression))
-        print("changed")
+    # def pressionChanged(self):
+    #     self.pression_label.setText("Pression : " + str(self.pression))
+    #     print("changed")
     
-    def humiditeChanged(self):
-        self.humidite_label.setText("Humidite : " + str(self.humidite))
-        print("changed")
+    # def humiditeChanged(self):
+    #     self.humidite_label.setText("Humidite : " + str(self.humidite))
+    #     print("changed")
     
     def rangeChanged(self):
         range = self.range.value()
@@ -264,14 +269,16 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.sync = False
                 self.readSync()
             # print(data)
-            if len(data)==self.cells+3:
-                # remove temperature, pression and humidite
-                self.temp = data[-3]
-                self.pression = data[-2]
-                self.humidite = data[-1]
-                # print(self.temp, self.pression, self.humidite)
-                self.buffer = np.array(data[:-3])
-                # print(self.buffer)
+
+            self.buffer = np.array(data)
+            # if len(data)==self.cells+3:
+            #     # remove temperature, pression and humidite
+            #     self.temp = data[-3]
+            #     self.pression = data[-2]
+            #     self.humidite = data[-1]
+            #     # print(self.temp, self.pression, self.humidite)
+            #     self.buffer = np.array(data[:-3])
+            #     # print(self.buffer)
 
     def readByte(self):
         data = self.ser.read(self.cells+2)
@@ -309,10 +316,10 @@ class MainWindow(QtWidgets.QMainWindow):
             self.readString()
             #  reashaep the data
        
-            self.buffer = self.buffer.reshape(11,11)
-            self.tempChanged()
-            self.pressionChanged()
-            self.humiditeChanged()
+            self.buffer = self.buffer.reshape(self.rows, self.cols)
+            # self.tempChanged()
+            # self.pressionChanged()
+            # self.humiditeChanged()
 
             #  plot the data*
             # print(self.buffer.shape)
@@ -395,7 +402,7 @@ class MainWindow(QtWidgets.QMainWindow):
         
     def write(self, temp):
         with open(str(self.file), "a") as f:
-            f.write(str([x for x in temp.reshape(1,-1)[0]])+",temperature : "+str(self.temp)+", humidity : "+ str(self.humidite)+", Pression : "+str(self.pression) +"\n")
+            f.write(str([x for x in temp.reshape(1,-1)[0]])+"\n")#+",temperature : "+str(self.temp)+", humidity : "+ str(self.humidite)+", Pression : "+str(self.pression) +"\n")
             print("str : " + str(temp))
 
 def GravityCenter(self, temp : np.ndarray):
