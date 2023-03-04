@@ -1,24 +1,14 @@
 # Muca Move
 
-One Paragraph of the project description
-
-Initially appeared on
-[gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2). But the page cannot open anymore so that is why I have moved it here.
+To realize a multi-touch surface, we will use a Muca board.
+This board has been designed by Marc Teyssier and enables multi-touch sensing with projected mutual capacitance.
+You can get all information about how to make a multi-touch surface [here](https://dvic.devinci.fr/tutorial/how-to-make-a-multitouch-surface/edit).
 
 ## Getting Started
 
-These instructions will give you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on deploying the project on a live system.
-
-### Prerequisites
-
-Requirements for the software and other tools to build, test and push 
-- [Example 1](https://www.example.com)
-- [Example 2](https://www.example.com)
-
 ### Arduino upload 
 
+In the esp32muca, you will find the code main.cpp to upload on the micro-controler, and the Muca librairy needed for the upload.  
 
 On line 38 and 39 of the main.cpp code to upload, there are two tables with values corresponding to the Tx and Rx pins used by the Muca board.
 1 when the pin is used and 0 when it's not. It is therefore necessary to adapt these values to the number of electrodes used.  
@@ -26,43 +16,11 @@ On line 38 and 39 of the main.cpp code to upload, there are two tables with valu
   bool rx[]={1,1,1,1,1,1,1,1,1,1,1,0};
   bool tx[]={1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0};
 ```
-## Running the tests
+### Display
 
-Explain how to run the automated tests for this system
+PROPLOT.py is the python code that displays the movements on the surface. 
+When the program is executed and the display has started, it is possible to make some adjustments. Indeed, buttons are available to manually calibrate certain details. You can change the threshold silence if you do not want to display the noise present on your surface. We can also modify the gain, accordingly modifying the amplification of the values sent from the Muca card or even modifying the maximum range of the values received by Muca.
 
-### Sample Tests
-
-Explain what these tests test and why
-
-    Give an example
-
-### Style test
-
-Checks if the best practices and the right coding style has been used.
-
-    Give an example
-
-## Deployment
-
-Add additional notes to deploy this on a live system
-
-## Built With
-
-  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
-    for the Code of Conduct
-  - [Creative Commons](https://creativecommons.org/) - Used to choose
-    the license
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
-of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
-available, see the [tags on this
-repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
 
 ## Authors
 
@@ -72,15 +30,3 @@ repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
 See also the list of
 [contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
 who participated in this project.
-
-## License
-
-This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
-Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
-details
-
-## Acknowledgments
-
-  - Hat tip to anyone whose code is used
-  - Inspiration
-  - etc
