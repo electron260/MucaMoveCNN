@@ -24,9 +24,10 @@ When the program is executed and the display has started, it is possible to make
 
 ## Authors
 
-  - **Billie Thompson** - *Provided README Template* -
-    [PurpleBooth](https://github.com/PurpleBooth)
+  - **Hugo Daumain** 
+    [github](https://github.com/electron260)
 
-See also the list of
-[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
-who participated in this project.
+  - **Nicolas Stas** 
+    [github](https://github.com/COLVERTYETY)
+    
+
